@@ -17,5 +17,5 @@ let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'an
 
 document.write('<ul>')
 for (let item of listOfItems) {
-    document.write(`<li>${item}</li>`);
+    document.write(`<li>ITEM OF ARRAY</li>`);
 }document.write('<ul>')
