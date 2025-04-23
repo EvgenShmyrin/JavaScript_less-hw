@@ -9,10 +9,14 @@
     width: 100vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    /*gap: 20px;*/
     padding: 20px 20px 20px 40px;
 }
 .user-block p{
-    padding-top: 5px;
-    margin-left: 20px;
+
+    padding-left: 20px;
+}
+.user-block {
+    padding: 5px 5px 5px 20px;
+    border: 1px solid lightgray;
 }
