@@ -11,3 +11,15 @@ let array3 = [false, -15, 'cat', true, 199]
 // console.log(array1 + ',' + array2 + ',' + array3)
 
 console.log(`${array1}, ${array2}, ${array3} `);
+
+// — Створити пустий масив. Наповнити його будь-якими значеннями, звертаючись до конкретного індексу.
+// Вивести в консоль
+//
+// let array=[]
+//
+// array[0]='cat';
+// array[1]=10;
+// array[2]=false;
+// array[3]='car';
+//
+// console.log(array)
