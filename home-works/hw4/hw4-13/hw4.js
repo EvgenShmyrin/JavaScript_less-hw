@@ -5,15 +5,21 @@
 function exchange(sumUAH,currencyValues,exchangeCurrency){
         let cash;
         if (exchangeCurrency === `USD`){
-            cash = sumUAH / currencyValues[0]['value'];
-            console.log(currencyValues[0]['value'])
-            return cash;
+            for(let vid of currencyValues){
+                if (vid.currency === "USD"){
+                    cash = Math.round(sumUAH / vid.value);
+                    return cash;
+                }
+            }
          }
          else if (exchangeCurrency === `EUR`){
-             cash = sumUAH / currencyValues[1]['value'];
-            console.log(currencyValues[1]['value'])
-            return cash;
+            for(let vid of currencyValues){
+                if (vid.currency === "EUR"){
+                    cash = Math.round(sumUAH / vid.value);
+                    return cash;
+                }
+            }
         }
          else return (`Такої валюти немає`)
 }
-console.log(exchange(10000, [{currency: 'USD', value: 25}, {currency: 'EUR', value: 42}], 'UA'))
+console.log(exchange(10000, [{currency: 'USD', value: 25}, {currency: 'EUR', value: 42}], 'USD'))
