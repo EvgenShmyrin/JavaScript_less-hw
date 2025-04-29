@@ -116,45 +116,41 @@
 // #kpsbSQCt2Lf
 // – створити функцію swap(arr,index1,index2). Функція міняє місцями значення у відповідних індексах
 
-// let swap = (arr, index1, index2) => {
-//     if (index1 < arr.length && index2 < arr.length) {
-//         let temp = arr[index1];
-//         arr[index1] = arr[index2];
-//         arr[index2]=temp;
-//         return arr;
-//     }else{
-//         return 'Помилка';
-//     }
-// }
-// console.log(swap([11,22,33,44],1,5));
- // Не розумію як тут обійтися без return? Так як ви казали, що в стрічковій функції він не потрібен.
+let swap = (arr, index1, index2) => {
+    if (index1 < arr.length && index2 < arr.length) {
+        let temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2]=temp;
+        console.log(arr);
+    }else{
+        console.log('Помилка');
+    }
+}
+swap([11,22,33,44],1,3);
 
 // #mkGDenYnNjn
 // – Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 
-let exchange = (sumUAH,currencyValues,exchangeCurrency) => {
-    let cash;
-    if (exchangeCurrency === `USD`){
-        for(let vid of currencyValues){
-            if (vid.currency === "USD"){
-                cash = Math.round(sumUAH / vid.value);
-                return cash;
-            }
-        }
-    }
-    else if (exchangeCurrency === `EUR`){
-        for(let vid of currencyValues){
-            if (vid.currency === "EUR"){
-                cash = Math.round(sumUAH / vid.value);
-                return cash;
-            }
-        }
-    }
-    else return (`Такої валюти немає`)
-}
-console.log(exchange(10000, [{currency: 'USD', value: 25}, {currency: 'EUR', value: 42}], 'EUR'))
-
-// Не розумію як тут обійтися без return? Так як ви казали, що в стрічковій функції він не потрібен.
-// Також не розумію чому підкреслює let cash?
+// let exchange = (sumUAH,currencyValues,exchangeCurrency) => {
+//     let cash;
+//     if (exchangeCurrency === `USD`){
+//         for(let vid of currencyValues){
+//             if (vid.currency === "USD"){
+//                 cash = Math.round(sumUAH / vid.value);
+//                 console.log(cash);
+//             }
+//         }
+//     }
+//     else if (exchangeCurrency === `EUR`){
+//         for(let vid of currencyValues){
+//             if (vid.currency === "EUR"){
+//                 cash = Math.round(sumUAH / vid.value);
+//                 console.log(cash);
+//             }
+//         }
+//     }
+//     else console.log(`Такої валюти немає`)
+// }
+// exchange(10000, [{currency: 'USD', value: 25}, {currency: 'EUR', value: 42}], 'UA')
 
 
