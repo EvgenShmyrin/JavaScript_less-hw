@@ -152,5 +152,3 @@ swap([11,22,33,44],1,3);
 //     else console.log(`Такої валюти немає`)
 // }
 // exchange(10000, [{currency: 'USD', value: 25}, {currency: 'EUR', value: 42}], 'UA')
-
-
