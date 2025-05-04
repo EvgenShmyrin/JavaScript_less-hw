@@ -22,7 +22,9 @@ let clients = [
     new Client(10, 'valya', 'rolla', 'rolla@gmail.com', '+380990272747', ['glass']),
     new Client(7, 'olena', 'kulabuh', 'kulabuh@gmail.com', '+380990272747', ['brash']),
 ]
-function clientsSort(values1, values2){
+
+function clientsSort(values1, values2) {
     return values1.order.length - values2.order.length;
 }
+
 console.log(clients.sort(clientsSort));
