@@ -36,3 +36,4 @@ for (let name of popelyushky) {
     if (name.sizeLag === 35) console.log(`${name.name} is wife for prince`);
 }
 let wife = popelyushky.find(lag => lag.sizeLag === prince.slipper);
+console.log(wife.name, `is wife for prince`)
