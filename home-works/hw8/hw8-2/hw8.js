@@ -1,32 +1,25 @@
-// #2ikXsE2WiKZ
+// #AiN5CoUQ
+// Створити функцію, яка робить глибоку копію об’єкта.
+// Додати перевірки на undefined, null, NaN.
+// Подумати і реалізувати логіку, в якій кінцевий об’єкт буде мати функції, які в нього були до цього моменту.
 
-// – Взяти масив з  Users[] з попереднього завдання, та відфільтрувати, залишивши тільки об’єкти з парними id (filter)
-
-function User(id, name, surname, email, phone) {
-    this.id = id;
-    this.name = name;
-    this.surname = surname;
-    this.email = email;
-    this.phone = phone;
+function dipCopy(arr){
+    if (arr) {
+        let functions = [];
+        for (let key in arr) {
+            if (typeof arr[key] === 'function') {
+                let newFunction = arr[key].bind({});
+                functions.push({newFunction, key});
+            }
+        }
+        console.log(functions);
+        let strArr = JSON.stringify(arr);
+        let parseArr = JSON.parse(strArr);
+        for (let func of functions) {
+            parseArr[func.key] = func.newFunction;
+        }
+        console.log(parseArr);
+        return parseArr;
+    }
 }
-
-users = [
-    new User(1, 'oleg', 'ronda', 'ronda@gmail.com', '+380990272747'),
-    new User(2, 'vasya', 'garba', 'garbaa@gmail.com', '+380990272747'),
-    new User(3, 'petya', 'jovner', 'jovner@gmail.com', '+380990272747'),
-    new User(4, 'olya', 'shmarin', 'shmarina@gmail.com', '+380990272747'),
-    new User(5, 'olexander', 'sedov', 'sedov@gmail.com', '+380990272747'),
-    new User(6, 'oleg', 'remiga', 'remiga@gmail.com', '+380990272747'),
-    new User(7, 'olena', 'kulabuh', 'kulabuh@gmail.com', '+380990272747'),
-    new User(8, 'nastya', 'sitenko', 'sitenko@gmail.com', '+380990272747'),
-    new User(9, 'kolya', 'toyda', 'toyda@gmail.com', '+380990272747'),
-    new User(10, 'valya', 'rolla', 'rolla@gmail.com', '+380990272747'),
-]
-
- function usersFilter(user) {
-    return user.id % 2 === 0;
-}
-
-let functionFilter = users.filter(usersFilter);
-
-console.log(functionFilter);
+dipCopy({title: 'JavaScript Complex', monthDuration: 5, myFunction() {}});
