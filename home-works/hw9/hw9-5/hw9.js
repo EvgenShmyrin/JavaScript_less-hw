@@ -73,61 +73,40 @@ let coursesArray = [
     }
 ];
 
-// for(let items of coursesArray) {
-//     let div1 = document.createElement('div');
-//     for(let item in items) {
-//         let div2 = document.createElement('div');
-//         let p = document.createElement('p');
-//         let li = document.createElement('li');
-//         let ul = document.createElement('ul');
-//         if (item === 'title') {
-//             p.innerText = item + ':' + items.title + ',';
-//             div2.appendChild(p);
-//         }else if (item === 'monthDuration') {
-//             p.innerText = item + ':' + items.monthDuration + ',';
-//             div2.appendChild(p);
-//         }else if (item === 'hourDuration') {
-//             p.innerText = item + ':' + items.hourDuration + ',';
-//             div2.appendChild(p);
-//         }else if (item === 'modules') {
-//             p.innerText = item + ':' ;
-//             div2.appendChild(p);
-//             for (let newItem of item) {
-//                 // li.innerText = modules[i] + ',';
-//                 console.log(item)
-//                 ul.appendChild(li);
-//                 div2.appendChild(ul);
-//             }
-//         }
-//         div1.appendChild(div2);
-//     }
-//
-//     document.body.appendChild(div1);
-// }
-
 
 for(let item of coursesArray) {
     let div1 = document.createElement('div');
     for (let newItem in item) {
-        let div2 = document.createElement('div');
-        let p = document.createElement('p');
-        if (newItem === 'modules'){
+        if (newItem === 'title') {
+            let div2 = document.createElement('div');
+            let p = document.createElement('p');
+            p.innerText = `${newItem}: "${item[newItem]}",`;
+            div2.appendChild(p);
+            div1.appendChild(div2)
+        }if (newItem === 'monthDuration') {
+            let div2 = document.createElement('div');
+            let p = document.createElement('p');
+            p.innerText = `monthDuration: ${item['monthDuration']}, hourDuration: ${item['hourDuration']}`;
+            div2.appendChild(p);
+            div1.appendChild(div2)
+        }
+        if (newItem === 'modules') {
+            let div2 = document.createElement('div');
+            let p = document.createElement('p');
             p.innerText = `${newItem}: [`;
             div2.appendChild(p);
             let ul = document.createElement('ul');
+            let p1 = document.createElement('p');
             for (let text of item[newItem]) {
                 let li = document.createElement('li');
                 li.innerText = text;
                 ul.appendChild(li);
                 div2.appendChild(ul);
-            }let p1 = document.createElement('p');
+                div1.appendChild(div2)
+            }
             p1.innerText = `];`;
             div2.appendChild(p1);
-        }else {
-            p.innerText = `${newItem}: ${item[newItem]},`;
-            div2.appendChild(p);
         }
-        div1.appendChild(div2);
     }
     document.body.appendChild(div1);
 }
