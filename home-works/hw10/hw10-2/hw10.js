@@ -3,11 +3,13 @@
 
 let input = document.getElementById("input");
 let button =document.getElementsByClassName("button")[0];
+let p = document.createElement('p');
 button.addEventListener("click", function (ev) {
     if (input.value < 18) {
-        alert("Вхід заборонено")
-        ev.preventDefault();
+        p.innerText = `Вхід заборонено`;
+        document.body.appendChild(p);
     }else{
-        alert("Вхі дозволен");
+        p.innerText = `Вхід дозволен`;
+        document.body.appendChild(p);
     }
 })
