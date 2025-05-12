@@ -6,7 +6,7 @@
 let name = document.getElementById("name");
 let surname = document.getElementById("surname");
 let age = document.getElementById("age");
-let submit = document.getElementById("submit");
+let button = document.getElementById("button");
 
 let p = document.createElement('p');
 button.addEventListener("click", function(event) {
