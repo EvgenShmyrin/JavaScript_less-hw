@@ -5,4 +5,5 @@
 let number1 = +localStorage.getItem('number');
 number1 += 1;
 localStorage.setItem('number', number1)
+
 document.getElementById('numberId').innerText = number1;
