@@ -46,14 +46,10 @@ button1.addEventListener("click", function (event) {
         }
         p.innerText = `${arrNext}`;
         document.body.appendChild(p);
-        console.log(position);
-        console.log('arr' + arrNext)
     } else {
         p.innerText = `Данні закінчилися`;
         document.body.appendChild(p);
     }
-    console.log(arrNext)
-    console.log(position)
 })
 button2.addEventListener("click", function (event) {
     event.preventDefault();
@@ -69,13 +65,9 @@ button2.addEventListener("click", function (event) {
         }
         p.innerText = `${arrPrew}`;
         document.body.appendChild(p);
-        console.log(position);
-        console.log('arr' + arrPrew)
     }
     if (position < 10 || position > 100) {
         p.innerText = `Данні закінчилися`;
         document.body.appendChild(p);
     }
-    console.log(arrPrew)
-    console.log(position)
 })
